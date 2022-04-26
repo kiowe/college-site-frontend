@@ -6,7 +6,7 @@ export interface Group {
 export interface GroupResponse {
     status: number,
     request: string,
-    response: Array<Group>
+    response: Group
 }
 
 export interface Subject {
