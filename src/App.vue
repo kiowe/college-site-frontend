@@ -37,16 +37,16 @@ export default class App extends Vue {
 		this.count = this.mainStore.getN();
 	}
 
-	async getGroups() {
-		// let api = new ApiService();
-		// this.group = api.goups.getGroup()
-		// console.log(api.goups.getGroup())
+	 getGroups() {
+		let api = new ApiService();
+		this.group = api.goups.getGroup()
+		console.log(this.group)
 
-		await axios.get<GroupResponse>("https://college-site-backend.herokuapp.com/api/v1/group/1")
-            .then(resp => {
-				this.group = resp.data.response;
-               	console.log(resp.data.response);
-            });
+		//  axios.get<GroupResponse>("https://college-site-backend.herokuapp.com/api/v1/group/1")
+        //     .then(resp => {
+		// 		this.group = resp.data.response;
+        //        	console.log(resp.data.response);
+        //     });
 
 		//console.log(this.group.id, this.group.groupName)
 	}
