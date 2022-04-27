@@ -1,12 +1,12 @@
 export interface Group {
     id: number,
-    groupName: string
+    group_name: string
 }
 
 export interface GroupResponse {
     status: number,
     request: string,
-    response: Group
+    response: Array<Group>
 }
 
 export interface Subject {
