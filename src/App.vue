@@ -1,26 +1,25 @@
 <template>
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand oil-logo" href="#">
-      <img src="../svg/gnt-oil_logo.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-      GNT-OIL
-    </a>
-  </div>
-</nav>
+	<Header></Header>
 </template>
 
 <script lang="ts">
-import { Vue } from 'vue-class-component'
+import { Options, Vue } from 'vue-class-component'
 import { useMainStore } from './store/store'
 import { api } from './api/api'
 import axios from 'axios'
 import { GroupResponse } from './models/model'
 
+import Header from '@/components/Header.vue'
+
 // type group = {
 // 	id: number;
 // 	group_name: string;
 // }
-
+@Options({
+	components: {
+		Header,
+	}
+})
 export default class App extends Vue {
 	// mainStore = useMainStore();
 	// count = 0;
@@ -54,16 +53,5 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-
-@font-face {
-	font-family: 'Garet';
-	src: url('../fonts/Garet/Garet-Heavy.otf') format('opentype');
-	font-style: normal;
-	font-weight: 850;
-}
-
-.oil-logo {
-	font-family: "Garet";
-}
 
 </style>
